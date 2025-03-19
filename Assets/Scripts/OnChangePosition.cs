@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class OnChangePosition : MonoBehaviour
@@ -70,5 +71,21 @@ public class OnChangePosition : MonoBehaviour
     {
         Physics.IgnoreCollision(other, GroundCollider, false);
         Physics.IgnoreCollision(other, GenerateMeshCollider, true);
+    }
+
+    // Hole grow animation.
+    public IEnumerator ScaleHole()
+    {
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = startScale * 2;
+
+        float time = 0;
+
+        while (time <= 0.4f)
+        {
+            time += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(startScale, endScale, time);
+            yield return null;
+        }
     }
 }
