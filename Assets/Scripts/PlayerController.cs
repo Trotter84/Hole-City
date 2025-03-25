@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
 
     [Header("Attributes")]
-    [SerializeField] float speed;
+    public int currentSize = 1;
+    public float speed;
 
 
     void Start()

@@ -11,8 +11,6 @@ public class CanvasUi : MonoBehaviour
     void Start()
     {
         objectCountTxt = GameObject.Find("Object Count_txt").GetComponent<TextMeshProUGUI>();
-
-
     }
 
     public void CountObject()
