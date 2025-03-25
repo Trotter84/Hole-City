@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 51278156011602186}
   - component: {fileID: 5831129836228652015}
   - component: {fileID: 5690710128875530546}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Round Bush
-  m_TagString: Object_Size_3
+  m_TagString: Obstacle
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

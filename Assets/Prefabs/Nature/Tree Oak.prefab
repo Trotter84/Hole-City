@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5139909983764730837}
   - component: {fileID: 214137584254981202}
   - component: {fileID: 8117137364047225303}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Tree Oak
-  m_TagString: Object_Size_4
+  m_TagString: Obstacle
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

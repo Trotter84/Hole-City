@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 888085311020863877}
   m_Layer: 8
   m_Name: Grass 3
-  m_TagString: Object_Size_1
+  m_TagString: Obstacle
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

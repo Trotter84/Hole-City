@@ -18,7 +18,7 @@ public class Conditions : MonoBehaviour
     {
         canvasUiScript.CountObject();
 
-        if (canvasUiScript.objectCount % 10 == 0)
+        if (canvasUiScript.objectCount % 15 == 0)
         {
             StartCoroutine(onChangePositionScript.ScaleHole());
         }

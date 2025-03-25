@@ -1,58 +1,43 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class OnChangePosition : MonoBehaviour
 {
     [Header("Components")]
-    public GameObject[] objectSize1;
-    public GameObject[] objectSize2;
-    public GameObject[] objectSize3;
-    public GameObject[] objectSize4;
-    public GameObject[] objectSize5;
-    public GameObject[] objectSize6;
+    public GameObject[] allObjects;
     public PolygonCollider2D ground2DCollider;
     public PolygonCollider2D hole2DCollider;
     public MeshCollider generateMeshCollider;
     public Collider groundCollider;
     Mesh generatedMesh;
     public PlayerController playerControllerScript;
+    public CapsuleCollider playerCollider;
 
     [Header("Attributes")]
     public float initialScale = 0.29f;
     public Vector3 currentScale;
-    public float speedIncrease = 0.06f;
+    public float speedIncrease = 0.09f;
+
+    [Header("Sizes")]
+    string size1 = "Obstacle Size 1";
+    string size3 = "Obstacle Size 3";
+    string size5 = "Obstacle Size 5";
+    string size7 = "Obstacle Size 7";
+    string size9 = "Obstacle Size 9";
+    string size11 = "Obstacle Size 11";
 
 
     void Start()
     {
         // allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
-        // for (int i = 1; i < 7; i++)
-        // {
-        //     string objectString = $"size{i}Objects";
-        //     (GameObject[])Convert.ChangeType(, typeof(GameObject[]);
-        // }
 
-        objectSize1 = GameObject.FindGameObjectsWithTag("Object_Size_1");
-        objectSize2 = GameObject.FindGameObjectsWithTag("Object_Size_2");
-        objectSize3 = GameObject.FindGameObjectsWithTag("Object_Size_3");
-        objectSize4 = GameObject.FindGameObjectsWithTag("Object_Size_4");
-        objectSize5 = GameObject.FindGameObjectsWithTag("Object_Size_5");
-        objectSize6 = GameObject.FindGameObjectsWithTag("Object_Size_6");
-
+        CalculateObjectSize();
 
         // foreach (var go in allObjects)
         // {
-        //     for (int i = 0; i < 7; i++)
-        //     {
-        //         gameObjectTags.Add(i, go.tag);
-
-        //     }
         //     if (go.layer == LayerMask.NameToLayer("Obstacles"))
         //     {
-        //         go.CompareTag("");
         //         Physics.IgnoreCollision(go.GetComponent<Collider>(), generateMeshCollider, true);
         //     }
         // }
@@ -116,8 +101,27 @@ public class OnChangePosition : MonoBehaviour
 
     void CalculateObjectSize()
     {
-        //TODO: Set up Layer changer.
-
+        switch (playerControllerScript.currentSize)
+        {
+            case 1:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1);
+                break;
+            case 3:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1, size3);
+                break;
+            case 5:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1, size3, size5);
+                break;
+            case 7:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1, size3, size5, size7);
+                break;
+            case 9:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1, size3, size5, size7, size9);
+                break;
+            case 11:
+                playerCollider.excludeLayers = LayerMask.GetMask(size1, size3, size5, size7, size9, size11);
+                break;
+        }
     }
 
     // Hole grow animation.
@@ -127,6 +131,8 @@ public class OnChangePosition : MonoBehaviour
         Vector3 endScale = startScale * 2;
 
         playerControllerScript.currentSize++;
+
+        CalculateObjectSize();
 
         playerControllerScript.speed += playerControllerScript.speed * speedIncrease;
 

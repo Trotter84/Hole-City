@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Object_Size_1
+  - Obstacle
   - Object_Size_2
-  - Object_Size_3
+  - Object_Size_1
   - Object_Size_4
   - Object_Size_5
+  - Object_Size_3
   - Object_Size_6
   layers:
   - Default
@@ -19,14 +20,14 @@ TagManager:
   - UI
   - Ground
   - GroundHole
-  - Obstacles
+  - Obstacle Size 1
+  - Obstacle Size 3
+  - Obstacle Size 5
+  - Obstacle Size 7
+  - Obstacle Size 9
+  - Obstacle Size 11
   - ShaderHole
   - ShaderHoleMask
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

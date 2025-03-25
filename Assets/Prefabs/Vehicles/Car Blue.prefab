@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6641034307124881178}
   - component: {fileID: 6213148579183184461}
   - component: {fileID: 6871340217007943619}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Car Blue
-  m_TagString: Object_Size_5
+  m_TagString: Obstacle
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
